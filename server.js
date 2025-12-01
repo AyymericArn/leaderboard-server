@@ -5,7 +5,7 @@ const sqlite3 = require("sqlite3").verbose();
 const fs = require("fs");
 
 const app = express();
-const PORT = 3001;
+const PORT = 80;
 
 // ========= CONFIG TOKEN =========
 const API_TOKEN = "DEV_2025_SECRET";
@@ -64,8 +64,8 @@ db.run(`
     score INTEGER NOT NULL,
     game TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    group_name TEXT NOT NULL
   );
-  ALTER TABLE scores ADD COLUMN group_name TEXT;
 `);
 
 // ========= ROUTES =========
